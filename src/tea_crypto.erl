@@ -1,5 +1,6 @@
 -module(tea_crypto).
 -export([tea_encrypt/2,tea_decrypt/2]).
+-export([tea_htonl/1,tea_ntohl/1]).
 -on_load(init/0).
 init() ->
     Dir = case code:priv_dir(tea_crypto) of
@@ -18,4 +19,8 @@ init() ->
 tea_encrypt(_Value,_Key)->    
     exit(nif_library_not_loaded).
 tea_decrypt(_Value,_Key)->
+    exit(nif_library_not_loaded).
+tea_htonl(_Value)->    
+    exit(nif_library_not_loaded).
+tea_ntohl(_Value)->    
     exit(nif_library_not_loaded).
